@@ -1,0 +1,34 @@
+.advertisement
+{
+	width:100px;
+	height:150px; 
+	border-color:black;
+	border-width:2px; 
+	background-color:gray; 
+	color:white;
+	position: absolute;
+	top: 3%;
+}
+.image-size {
+	width: 250px;
+}
+.header {
+	width: 70%;
+	margin: auto;
+}
+.logo{
+	padding-right: 1%;
+	float: left;
+}
+.title {
+	height:150px; 
+}
+.content {
+	width: 70%;
+	margin: auto;
+}
+.image {
+	float: left;
+}
+.main{
+}
