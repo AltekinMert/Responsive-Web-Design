@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Game</title>
+    <style>
+        #game-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+    <button type="button" id="game-button"onmouseover="handleHoverStart()">
+        Click Me!
+    </button>
+
+    <script>
+        let button = document.getElementById('game-button');
+        let clicks = 0;
+        let level = 1;
+        let timeout = 500;
+        let hoverStartTime;
+
+        function handleClick() {
+            clicks++;
+            if (clicks >= 3) {
+                // User won the level
+                alert('You won level ' + level);
+                level++;
+                clicks = 0;
+                moveButton();
+                timeout -= 100;
+            }
+        }
+
+        function moveButton() {
+            // Generate random position
+            let randomX = Math.random() * 300;
+            let randomY = Math.random() * 300;
+            button.style.marginLeft = randomX + 'px';
+            button.style.marginTop = randomY + 'px';
+        }
+
+        function handleHoverStart() {
+            hoverStartTime = setTimeout(function() {
+                moveButton()
+            }, timeout); 
+        }
+
+        button.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>
